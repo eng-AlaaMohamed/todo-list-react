@@ -1,38 +1,90 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ccc;
+}
+
 .App {
-  text-align: center;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-title {
+    margin: 0;
+    padding: 0 0 15px;
+    width: fit-content;
+    border-bottom: 2px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.task-list {
+    padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.task-list li {
+    list-style-type: "👉";
+    cursor: pointer;
+    width: 400px;
+    overflow-wrap: break-word;
+    font-size: 20px;
+    margin-left: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.input {
+    padding: 17px 5px;
+    margin-bottom: 20px;
+    background-color: #eee;
+    border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input:focus{
+    border: 1px solid #0075ff;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.btn {
+    padding: 10px 5px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #0075ff;
+    border: none;
+}
+
+.done {
+   text-decoration: line-through;
+}
+
+.delete-task {
+    cursor: pointer;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+    margin: 15px 0;
+}
+
+.not-found-tasks {
+    list-style-type: none !important;
+    text-align: center;
+    width: 100% !important;
+    font-size: 25px;
+    font-weight: bold;
+    color: #777;
+    margin: 15px 0;
 }
